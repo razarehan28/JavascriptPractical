@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="calc.css">
+	<title>Scientific Calculator</title>
+</head>
+
+<body>
+	<div class="container">
+		<!-- calculator head -->
+		<div class="head">
+			<!-- Calculator screen -->
+			<div class="calculator-screen">
+				<!-- calculator-body -->
+				<div class="calculator-body">
+					<div class="button">
+						<!-- Row-1 -->
+						<div class="row-1">
+							<div id="degree" class="btn btn-degree">Deg</div>
+							<div id="fixedExponent" class="btn btn-fixedExponent">F-E</div>
+						</div>
+						<!-- Row-2 -->
+						<div class="row-2">
+							<div id="memory-clear" class="button">MC</div>
+							<div id="memory-recall" class="button">MR</div>
+							<div id="memory-plus" class="button mry">M+</div>
+							<div id="memory-sub" class="button mry">M-</div>
+							<div id="memory-store" class="button mry">M</div>
+						</div>
+						<!-- Row-3 -->
+						<div class="row-3">
+							<div class="dropdown-1">
+								<button class="trigonometry-function dropdown-btn col-2 btn">
+									<img src="./Trigonometry.png" alt="trigonometry-img">Trigonometry
+								</button>
+								<div class="dropdown-chart">
+									<div class="button" id="sine">Sin</div>
+									<div class="button" id="cosine">Cos</div>
+									<div class="button" id="tangent">Tan</div>
+								</div>
+							</div>
+							<div class="dropdown-2">
+								<button class="function-button dropdown-button col-3 btn">
+									<img src="./function.png" alt="function-img">Function
+								</button>
+								<div class="dropdown-chart">
+									<div class="button" id="absolute">Absolute</div>
+									<div class="button" id="floor">Floor</div>
+									<div class="button" id="ceil">Ceil</div>
+									<div class="button" id="round">Round</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Row-4 -->
+					<div class="row-4">
+						<div id="second" class="button">2<sup>nd</sup></div>
+						<!--unicode of pi-->
+						<div id="pi" class="button">&#960;</div>
+						<div id="exponent" class="button">e</div>
+						<div id="clear" class="button">C</div>
+						<div id="back" class="button">
+							<img src="./cut.png" alt="cut-img">
+						</div>
+					</div>
+					<!-- Row-5 -->
+					<div class="row-5">
+						<div id="pow-two" class="button">x<sup>2</sup></div>
+						<div id="pow-3" class="button-hidden">x<sup>3</sup></div>
+						<div id="mult-inverse" class="button">1/x</div>
+						<div id="absolute" class="button">|x|</div>
+						<div id="exponent" class="button">exp</div>
+						<div id="mod" class="button">mod</div>
+					</div>
+					<!-- Row-6 -->
+					<div class="row-6">
+						<!--unicode of sqaure root-->
+						<div id="sqr-root" class="btn">&radic;x</div>
+						<!--unicode of qube root-->
+						<div class="qube-root" class="button-hidden">&#8731;x</div>
+						<div id="open-parenthesis" class="button">(</div>
+						<div id="close-parenthesis" class="button">)</div>
+						<div id="fact" class="button">n!</div>
+						<div id="divide" class="button oper">/</div>
+					</div>
+					<!-- Row-7 -->
+					<div class="row-7">
+						<div id="pow" class="button">x<sup>y</sup></div>
+						<!-- unicode of x root y -->
+						<div id="x-root-y" class="button-hidden"><sup>y</sup>&radic;x</div>
+						<div id="seven" class="button num">7</div>
+						<div id="eight" class="button num">8</div>
+						<div id="nine" class="button num">9</div>
+						<div id="multiply" class="button oper">*</div>
+					</div>
+					<!-- Row-8 -->
+					<div class="row-8">
+						<div id="base10" class="button">10<sup>x</sup></div>
+						<div id="base2" class="button hidden">2<sup>x</sup></div>
+						<div id="four" class="button num">4</div>
+						<div id="five" class="button num">5</div>
+						<div id="six" class="button num">6</div>
+						<div id="subtract" class="button oper">-</div>
+					</div>
+					<!-- Row-9 -->
+					<div class="row-9">
+						<div id="logarithm" class="button">log</div>
+						<div id="logarithm2" class="button hidden ">log<sub>2</sub>x</div>
+						<div id="one" class="button num">1</div>
+						<div id="two" class="button numb">2</div>
+						<div id="three" class="button num">3</div>
+						<div id="add" class="button oper">+</div>
+					</div>
+					<!-- Row-10 -->
+					<div class="row-10">
+						<div id="natural-logarithm" class="button">ln</div>
+						<div id="base-e" class="button hidden">e<sup>x</sup></div>
+						<div id="plus-minus" class="button">+/-</div>
+						<div id="zero" class="button number">0</div>
+						<div id="decimal" class="button oper">.</div>
+						<div id="equalto" class="button">=</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
