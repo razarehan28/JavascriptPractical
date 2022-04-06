@@ -2,21 +2,21 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	}
-	:root {
+}
+:root {
 	--container-bg-color: #f1f2f4;
 	--screen-bg-color: rgb(242, 242, 242);
 	--btn-hover-color: rgb(188, 226, 248);
 	--dropdownMenu-color: rgb(228, 240, 247);
 	--box-shadow-color: rgba(46, 46, 46, 1);
 	--equal-operator: #92c2e8;
-	}
-	.container {
+}
+.container {
 	background-color: var(--container-bg-color);
 	margin: 2rem auto;
 	width: 400px;
-	}
-	.calculator-screen {
+}
+.calculator-screen {
 	height: 85px;
 	text-align: right;
 	width: 400px;
@@ -25,11 +25,11 @@
 	padding: 1rem;
 	background-color: var(--screen-bg-color);
 	overflow: scroll hidden;
-	}
-	body {
+}
+body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	}
-	.head {
+}
+.head {
 	padding: 5px;
 	display: flex;
 	flex-direction: column;
@@ -37,84 +37,86 @@
 	align-content: center;
 	align-items: center;
 	box-shadow: 5px -1px 19px 0px var(--box-shadow-color);
-	}
-	.btn-grid .row {
+}
+.btn-grid .row {
 	background-color: var(--screen-bg-color);
-	}
-	.row {
+}
+.row {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	background-color: rgb(246, 246, 246);
-	}
-	.btn {
+}
+.btn {
 	text-align: center;
 	padding: 0.5rem 1rem;
-	}
-	.btn:hover {
+}
+.btn:hover {
 	box-shadow: 7px 7px 5px -3px var(--box-shadow-color);
 	border-radius: 5px;
 	background-color: var(--btn-hover-color);
-	}
-	.dropdown-btn::after {
+}
+.dropdown-btn::after {
 	height: 12px;
 	width: 16px;
 	content: "";
 	background: url("./dropdown.png");
-	}
-	.dropdown-chart-1 {
+}
+.dropdown-chart-1 {
 	display: none;
 	width: 140px;
 	position: absolute;
 	background-color: var(--dropdownMenu-color);
-	}
-	.dropdown-chart-2 {
+}
+.dropdown-chart-2 {
 	display: none;
 	width: 115px;
 	position: absolute;
 	background-color: var(--dropdownMenu-color);
-	}
-	.btn-deg,.btn-fe {
+}
+.btn-deg,
+.btn-fe {
 	font-weight: bold;
-	}
-	.dropdown {
+}
+.dropdown {
 	position: relative;
-	}
-	.dropdown button {
+}
+.dropdown button {
 	border: none;
-	}
-	.memory {
+}
+.memory {
 	font-weight: bold;
-	}
-	.column-2,.column-3 {
+}
+.column-2,
+.column-3 {
 	display: flex;
 	align-items: center;
-	}
-	.show {
+}
+.show {
 	display: block;
-	}
-	.hide {
+}
+.hide {
 	display: none;
-	}
-	.color {
+}
+.color {
 	background-color: var(--btn-hover-color);
 	border-radius: 5px;
-	}
-	.dropdown:hover {
+}
+.dropdown:hover {
 	display: block;
-	}
-	.btn p {
+}
+.btn p {
 	font-size: 14px;
 	letter-spacing: 1px;
-	}
-	.column2 {
+}
+.column2 {
 	grid-column: 1/3;
-	}
-	.column-3 {
+}
+.column-3 {
 	grid-column: 2/5;
-	}
-	.number {
+}
+.number {
 	font-weight: bold;
-	}
-	#equal {
+}
+#equal {
 	background-color: var(--equal-operator);
-	}
+}
