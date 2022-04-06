@@ -9,12 +9,12 @@ const second = document.querySelector("#secondBtn");
 const number = document.querySelectorAll(".number");
 const screen = document.querySelector(".calculator-screen");
 const backspace = document.querySelector("#backspace");
-const del = document.querySelector("#clear");
+const clear = document.querySelector("#clear");
 //initialize the screen value
 let memory = [],
   i = 0;
 screen.innerHTML = "";
-let Flag = false;
+let flag = false;
 // 2nd button
 second.addEventListener("click", function () {
   if (!second.classList.contains("color")) {
@@ -39,7 +39,7 @@ function eventList(e) {
   let char = e.target.id;
   switch (char) {
     case "sin":
-      if (Flag) {
+      if (flag) {
         screen.innerHTML = Math.sin(
           (screen.innerHTML * Math.PI) / 180
         ).toPrecision(2);
@@ -48,7 +48,7 @@ function eventList(e) {
       }
       break;
     case "cos":
-      if (Flag) {
+      if (flag) {
         screen.innerHTML = Math.cos(
           (screen.innerHTML * Math.PI) / 180
         ).toPrecision(2);
@@ -57,7 +57,7 @@ function eventList(e) {
       }
       break;
     case "tan":
-      if (Flag) {
+      if (flag) {
         screen.innerHTML = Math.tan(
           (screen.innerHTML * Math.PI) / 180
         ).toPrecision(2);
@@ -66,7 +66,7 @@ function eventList(e) {
       }
       break;
     case "sec":
-      if (Flag) {
+      if (flag) {
         screen.innerHTML = Math.sec(
           (screen.innerHTML * Math.PI) / 180
         ).toPrecision(2);
@@ -77,12 +77,12 @@ function eventList(e) {
     case "ceil":
       screen.innerHTML = Math.ceil(screen.innerHTML);
       break;
-      break;
     case "floor":
       screen.innerHTML = Math.floor(screen.innerHTML);
       break;
     case "round":
       screen.innerHTML = Math.round(screen.innerHTML);
+      break;
     case "f-e":
       screen.innerHTML = Math.pow(10, screen.innerHTML);
       break;
@@ -95,9 +95,9 @@ function eventList(e) {
       break;
     case "pi":
       if (screen.innerHTML === " ") {
-        screen.innerHTML = 3.1428;
+        screen.innerHTML = Math.PI;
       } else {
-        screen.innerHTML = screen.innerHTML * 3.1428;
+        screen.innerHTML = screen.innerHTML * Math.PI;
       }
       break;
     case "equal":
@@ -116,10 +116,10 @@ function eventList(e) {
       break;
     case "exponential":
       if (screen.innerHTML === "") {
-        screen.innerHTML = 2.7182;
+        screen.innerHTML = Math.E;
         console.log(screen.innerHTML);
       } else {
-        screen.innerHTML = screen.innerHTML * 2.7182;
+        screen.innerHTML = screen.innerHTML * Math.E;
       }
       break;
     case "pow2":
