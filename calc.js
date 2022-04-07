@@ -11,9 +11,8 @@ const screen = document.querySelector(".calculator-screen");
 const backspace = document.querySelector("#backspace");
 const clear = document.querySelector("#clear");
 //initialize the screen value
-let memory = [],
   i = 0;
-let memo = 0;
+let memory = 0;
 screen.innerHTML = "";
 let flag = false;
 // 2nd button
@@ -148,7 +147,7 @@ function eventList(e) {
       screen.innerHTML = Math.exp(screen.innerHTML);
       break;
     case "mod":
-      screen.innerHTML = Math.abs(screen.innerHTML);
+      screen.innerHTML = screen.innerHtml + "%";
       break;
     case "base10":
       screen.innerHTML = Math.pow(10, screen.innerHTML);
@@ -174,17 +173,17 @@ function eventList(e) {
       screen.innerHTML = memoryStored();
       break;
     case "memory-recall":
-      screen.innerHTML = memo;
+      screen.innerHTML = memory;
       break;
     case "memory-clear":
-      memo = 0;
+      memory = 0;
       break;
     case "memory-plus":
-      memo = memo + parseFloat(screen.innerHTML);
+      memory = memory + parseFloat(screen.innerHTML);
       screen.innerHTML = "";
       break;
     case "memory-minus":
-      memo = memo - parseFloat(screen.innerHTML);
+      memory = memory - parseFloat(screen.innerHTML);
       screen.innerHTML = "";
       break;
     case "pow3":
