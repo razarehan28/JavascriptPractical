@@ -13,6 +13,7 @@ const clear = document.querySelector("#clear");
 //initialize the screen value
 let memory = [],
   i = 0;
+let memo = 0;
 screen.innerHTML = "";
 let flag = false;
 // 2nd button
@@ -75,16 +76,19 @@ function eventList(e) {
       }
       break;
     case "ceil":
-      screen.innerHTML = Math.ceil(screen.innerHTML);
+      screen.innerHTML = Math.ceil(parseFloat(screen.innerHTML));
       break;
     case "floor":
-      screen.innerHTML = Math.floor(screen.innerHTML);
+      screen.innerHTML = Math.floor(parseFloat(screen.innerHTML));
       break;
     case "round":
-      screen.innerHTML = Math.round(screen.innerHTML);
+      screen.innerHTML = Math.round(parseFloat(screen.innerHTML));
+      break;
+    case "absolute":
+      screen.innerHTML = Math.abs(parseFloat(screen.innerHTML));
       break;
     case "f-e":
-      screen.innerHTML = Math.pow(10, screen.innerHTML);
+      screen.innerHTML = Math.pow(parseFloat(10, screen.innerHTML));
       break;
     case "backspace":
       screen.innerHTML = backSpace(screen.innerHTML);
@@ -109,7 +113,7 @@ function eventList(e) {
       break;
     case "pos-neg":
       if (screen.innerHTML === " ") {
-        alert("Enter the number you want");
+        alert("Enter the number for positive and negative ");
       } else {
         screen.innerHTML = changeSign(screen.innerHTML);
       }
@@ -127,9 +131,6 @@ function eventList(e) {
       break;
     case "denom":
       screen.innerHTML = 1 / screen.innerHTML;
-      break;
-    case "absolute":
-      screen.innerHTML = Math.abs(screen.innerHTML);
       break;
     case "root":
       screen.innerHTML = Math.sqrt(screen.innerHTML);
@@ -154,14 +155,14 @@ function eventList(e) {
       break;
     case "logarithm":
       if (screen.innerHTML === "") {
-        alert("Enter the number you want");
+        alert("Enter the number for log");
       } else {
         screen.innerHTML = Math.log(screen.innerHTML);
       }
       break;
     case "natural-logarithm":
       if (screen.innerHTML == "") {
-        alert("Enter the number you want");
+        alert("Enter the number for ln");
       } else {
         screen.innerHTML = Math.log10(screen.innerHTML);
       }
@@ -173,16 +174,18 @@ function eventList(e) {
       screen.innerHTML = memoryStored();
       break;
     case "memory-recall":
-      screen.innerHTML = memoryRecall();
+      screen.innerHTML = memo;
       break;
     case "memory-clear":
-      memoryClear();
+      memo = 0;
       break;
     case "memory-plus":
-      memoryPlus(screen.innerHTML);
+      memo = memo + parseFloat(screen.innerHTML);
+      screen.innerHTML = "";
       break;
     case "memory-minus":
-      memoryMinus();
+      memo = memo - parseFloat(screen.innerHTML);
+      screen.innerHTML = "";
       break;
     case "pow3":
       if (screen.innerHTML.includes("-")) {
@@ -198,7 +201,7 @@ function eventList(e) {
         screen.innerHTML = Math.pow(screen.innerHTML, 1 / 3);
       }
       break;
-    case "x-root-y":
+    case "x-raised-y":
       screen.innerHTML += "^";
       break;
     case "base-e":
@@ -220,11 +223,11 @@ degree.addEventListener("click", () => {
   if (!degree.classList.contains("show")) {
     degree.classList.add("show");
     degree.innerHTML = "RAD";
-    Flag = false;
+    flag = false;
   } else {
     degree.classList.remove("show");
     degree.innerHTML = "DEG";
-    Flag = true;
+    flag = true;
   }
 });
 //Function of factorial
@@ -243,46 +246,6 @@ function root(num) {
   a = num.slice(0, num.indexOf("^"));
   b = num.slice(num.indexOf("^") + 1);
   return Math.pow(a, b);
-}
-//memory functions
-function memoryClear() {
-  for (let i = 0; i <= memory.length; i++) {
-    memory.pop();
-  }
-  console.log(memory);
-  return memory;
-}
-function memoryRecall() {
-  return memory.pop().toString();
-}
-function memoryPlus(num) {
-  if (memory.length === 0) {
-    screen.innerHTML = "";
-    memory.push(num);
-    console.log(memory);
-  } else {
-    memory.push(num);
-  }
-}
-function memoryMinus() {
-  if (memory.length === 0) {
-    alert("Nothing is in the memory");
-  } else {
-    memory.pop();
-  }
-  return memory;
-}
-function memoryStored() {
-  if (memory.length === 0) {
-    alert("There is nothing in the memory");
-  } else {
-    screen.innerHTML = memory[i];
-    i++;
-    if (i === memory.length) {
-      i = 0;
-    }
-  }
-  return memory;
 }
 // events for all the buttons
 btns.forEach((btn) => {
@@ -326,10 +289,10 @@ function changeSign(number) {
 function evaluate(str) {
   function splitString(str) {
     let index = 0;
-    let splitArray = str.split("").reduce((arr, oper, i) => {
-      if (isNaN(parseInt(oper))) {
+    let splitArray = str.split("").reduce((arr, operand, i) => {
+      if (isNaN(parseInt(operand))) {
         arr.push(str.slice(index, i));
-        arr.push(oper);
+        arr.push(operand);
         index = i + 1;
       }
       return arr;
@@ -426,8 +389,12 @@ document.onkeydown = (e) => {
   switch (char) {
     case "Digit0":
     case "Number0":
-    case "Number0":
-      screen.innerHTML = screen.innerHTML + 0;
+    case "Numpad0":
+      if (!e.shiftKey) {
+        screen.innerHTML = screen.innerHTML + 0;
+      } else {
+        screen.innerHTML = ")";
+      }
       break;
     case "Digit1":
     case "Number1":
@@ -452,7 +419,11 @@ document.onkeydown = (e) => {
     case "Digit5":
     case "Number5":
     case "Numpad5":
-      screen.innerHTML = screen.innerHTML + 5;
+      if (!e.shiftKey) {
+        screen.innerHTML = screen.innerHTML + 5;
+      } else {
+        screen.innerHTML = "%";
+      }
       break;
     case "Digit6":
     case "Number6":
@@ -468,16 +439,6 @@ document.onkeydown = (e) => {
     case "Numpad7":
       screen.innerHTML = screen.innerHTML + 7;
       break;
-    case "Digit8":
-    case "Number8":
-    case "Numpad8":
-      screen.innerHTML = screen.innerHTML + 8;
-      break;
-    case "Digit9":
-    case "Number9":
-    case "Numpad9":
-      screen.innerHTML = screen.innerHTML + 9;
-      break;
     case "Minus":
     case "NumpadSubtract":
       screen.innerHTML = screen.innerHTML + "-";
@@ -492,6 +453,15 @@ document.onkeydown = (e) => {
     case "NumpadDivide":
     case "slash":
       screen.innerHTML = screen.innerHTML + "/";
+      break;
+    case "Digit9":
+    case "Number9":
+    case "Numpad9":
+      if (!e.shiftKey) {
+        screen.innerHTML = screen.innerHTML + 9;
+      } else {
+        screen.innerHTML = "(";
+      }
       break;
     case "Enter":
     case "Equal":
