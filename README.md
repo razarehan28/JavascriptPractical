@@ -1,10 +1,10 @@
 # JavascriptPractical
 scientific calculator
 
-![s1](https://user-images.githubusercontent.com/99795516/161936060-7a3c66cd-1506-4b04-887d-56e4a436c66d.png)
-![s2](https://user-images.githubusercontent.com/99795516/161936075-dae27f31-4382-4936-8212-50a2f0bb7ca4.png)
-![s3](https://user-images.githubusercontent.com/99795516/161936092-efd2ea69-076a-48eb-acac-e3bc3257c70b.png)
-![s4](https://user-images.githubusercontent.com/99795516/161936102-2f566809-9c54-4562-b0f5-b79062cd488a.png)
+![s1](https://user-images.githubusercontent.com/99795516/162122408-a29340f5-1f72-4ef7-9b63-3000300663ae.png)
+![s2](https://user-images.githubusercontent.com/99795516/162122418-a37596a1-700f-4a8d-80fe-8e5114e7d147.png)
+![s3](https://user-images.githubusercontent.com/99795516/162122421-70e20648-8600-45f1-8ced-f9202528136d.png)
+
 
 
 
