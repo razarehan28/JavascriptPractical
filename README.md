@@ -8,7 +8,11 @@ scientific calculator
 
 
 
-https://user-images.githubusercontent.com/99795516/161937170-92eb3c62-b755-4a43-aa16-86e846c30c60.mp4
+
+
+https://user-images.githubusercontent.com/99795516/162402615-c34809fa-4aa0-474e-b529-97be706307df.mp4
+
+
 
 
 
