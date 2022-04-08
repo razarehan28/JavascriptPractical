@@ -1,18 +1,18 @@
 //selecting various elements
-const btns = document.querySelectorAll(".btn");
+let btns = document.querySelectorAll(".btn");
 const deg = document.querySelector("#degree");
-const functionButton = document.querySelector(".function-btn");
+let functionButton = document.querySelector(".function-btn");
 const operator = document.querySelectorAll(".operator");
 const equal = document.querySelector("#equal");
-const trigoButton = document.querySelector(".trigonometry-function");
-const second = document.querySelector("#secondBtn");
+let trigoButton = document.querySelector(".trigonometry-function");
+let second = document.querySelector("#secondBtn");
 const number = document.querySelectorAll(".number");
-const screen = document.querySelector(".calculator-screen");
+let screen = document.querySelector(".calculator-screen");
 const backspace = document.querySelector("#backspace");
-const clear = document.querySelector("#clear");
+let clear = document.querySelector("#clear");
 //initialize the screen value
-  i = 0;
 let memory = 0;
+i = 0;
 screen.innerHTML = "";
 let flag = false;
 // 2nd button
@@ -74,16 +74,16 @@ function eventList(e) {
         screen.innerHTML = Math.sec(screen.innerHTML).toPrecision(10);
       }
       break;
-    case "ceil":
+    case "Ceil":
       screen.innerHTML = Math.ceil(parseFloat(screen.innerHTML));
       break;
-    case "floor":
+    case "Floor":
       screen.innerHTML = Math.floor(parseFloat(screen.innerHTML));
       break;
-    case "round":
+    case "Round":
       screen.innerHTML = Math.round(parseFloat(screen.innerHTML));
       break;
-    case "absolute":
+    case "Absolute":
       screen.innerHTML = Math.abs(parseFloat(screen.innerHTML));
       break;
     case "f-e":
