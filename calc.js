@@ -74,16 +74,16 @@ function eventList(e) {
         screen.innerHTML = Math.sec(screen.innerHTML).toPrecision(10);
       }
       break;
-    case "Ceil":
+    case "ceil":
       screen.innerHTML = Math.ceil(parseFloat(screen.innerHTML));
       break;
-    case "Floor":
+    case "floor":
       screen.innerHTML = Math.floor(parseFloat(screen.innerHTML));
       break;
-    case "Round":
+    case "round":
       screen.innerHTML = Math.round(parseFloat(screen.innerHTML));
       break;
-    case "Absolute":
+    case "absolute":
       screen.innerHTML = Math.abs(parseFloat(screen.innerHTML));
       break;
     case "f-e":
